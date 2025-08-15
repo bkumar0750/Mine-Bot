@@ -1,76 +1,74 @@
+MineBot
 
----
+MineBot is an intelligent chatbot designed to assist with queries related to mining laws, regulations, and guidelines in India.
+It uses advanced Natural Language Processing (NLP) techniques and integrated external knowledge sources to provide accurate and contextual responses.
 
-# MineBot
+Key Features
 
-MineBot is an intelligent chatbot designed to provide information and assistance regarding mining laws and regulations in India. It leverages advanced natural language processing (NLP) techniques and external knowledge bases to offer accurate and timely responses to user queries.
+Mining Law Knowledge – Information on acts, regulations, circulars, and notifications relevant to India’s mining sector.
 
-## Features
+Natural Language Queries – Interact in plain language without needing predefined commands.
 
-- **Mining Law Expertise**: MineBot is equipped with knowledge about various mining acts, regulations, circulars, and notifications relevant to the mining industry in India.
+External Knowledge Support – Integrates sources like Wikipedia and search APIs to enhance responses.
 
-- **Natural Language Understanding**: Users can interact with MineBot using natural language queries, making it easy to seek information and guidance on mining-related topics.
+Reasoning Framework – Uses a reasoning-based approach to choose the best possible answer path.
 
-- **External Knowledge Sources**: MineBot utilizes external knowledge bases, including Wikipedia and Google Search, to supplement its responses and provide comprehensive information.
+Easy Deployment – Runs locally or inside Docker for flexible deployment options.
 
-- **ReAct Framework**: MineBot employs the ReAct framework, which facilitates reasoning and intelligent action selection based on user prompts and available tools.
+Getting Started
+1. Clone the Repository
+git clone https://github.com/your-username/MineBot.git
+cd MineBot
 
-- **Dockerized Deployment**: The MineBot prototype is dockerized, enabling seamless deployment on various platforms and environments.
+2. Create and Activate a Virtual Environment (optional but recommended)
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
 
-## Demo
+3. Install Dependencies
+pip install -r requirements.txt
 
-To interact with MineBot, simply input your questions related to mining laws and regulations in the chat interface.
+4. Configure Environment Variables
 
-![UI](UI.png)
+Create a .env file in the project root and add your API keys:
 
-## Getting Started
+HUGGINGFACEHUB_API_TOKEN=your_token_here
+OPENAI_API_KEY=your_token_here
+SERPAPI_API_KEY=your_token_here
 
-To run MineBot locally, follow these steps:
+5. Run the Application
+streamlit run app.py
 
-1. Clone the repository to your local machine.
-2. Install the required dependencies listed in the `requirements.txt` file.
-3. Activate the Python virtual environment (if applicable).
-4. Make sure to set up the required environment variables in a `.env` file.
-5. Run the Streamlit app using the command `streamlit run app.py`.
-6. Access MineBot through your web browser at `localhost:8501`.
 
-## Environment Variables
+Open your browser and go to:
 
-Create a `.env` file in your project and add your own api keys for these variables.
+http://localhost:8501
 
-```
-HUGGINGFACEHUB_API_TOKEN = 
-OPENAI_API_KEY = 
-SERPAPI_API_KEY = 
-```
+Troubleshooting
+SWIG Error (faiss-cpu installation)
 
-## Troubleshooting
+If you encounter a SWIG-related error during dependency installation:
 
-### SWIG Error when installing faiss-cpu
+Linux/macOS:
 
-If you encounter an error related to SWIG when installing the `faiss-cpu` package, you can try the following steps to resolve the issue:
-
-Install the `swig` package using the following command:
-
-```bash
 sudo apt-get update
 sudo apt-get install swig
-```
 
-For windows, you can download the swig executable from the [official website](http://www.swig.org/download.html).
 
-## Deployment
+Windows:
+Download the SWIG executable from the official website and add it to your system PATH.
 
-MineBot can also be deployed using Docker. Simply build the Docker image using the provided Dockerfile and run the container on your preferred platform.
+Deployment
 
-## Contributors
+You can also run MineBot in a Docker container:
 
-- [Siranjeevi K](https://github.com/SiranjeeviK)
+docker build -t minebot .
+docker run -p 8501:8501 minebot
 
-## License
+License
 
-This project is licensed under the [LICENSE](LICENSE). 
-Please contact the author, Siranjeevi K, for permission to use this project in commercial applications. 
-For non-commercial and educational purposes, you are free to use and modify the project, provided that proper credit is given to the author.
-
----
+This project is intended for non-commercial and educational purposes.
+You are free to use and modify it with proper attribution.
+For commercial use, please obtain explicit permission.
